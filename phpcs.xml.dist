@@ -12,6 +12,7 @@
 	<arg value="nps"/>
 
 	<!-- The directories to apply the rules -->
+	<file>./app/</file>
 	<file>./inc/</file>
 	<file>./tests/</file>
 
@@ -27,7 +28,10 @@
 		<properties>
 			<property name="rootNamespaces" type="array">
 				<element key="app" value="Syntatis\WPHelpers"/>
-				<element key="tests" value="Syntatis\WPHelpers\Tests"/>
+				<element key="inc" value="Syntatis\WPHelpers"/>
+				<element key="tests/app" value="Syntatis\WPHelpers\Tests"/>
+				<element key="tests/inc" value="Syntatis\WPHelpers\Tests"/>
+				<element key="tests/phpunit" value="Syntatis\WPHelpers\Tests"/>
 			</property>
 		</properties>
 	</rule>

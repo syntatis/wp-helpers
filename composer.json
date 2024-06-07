@@ -4,7 +4,8 @@
 	"keywords": [
 		"wordpress",
 		"helpers",
-		"functions"
+		"functions",
+		"classes"
 	],
 	"homepage": "https://github.com/syntatis/wp-helpers",
 	"authors": [
@@ -25,15 +26,18 @@
 		}
 	},
 	"autoload-dev": {
-		"files": [
-			"inc/helpers.php"
-		],
 		"psr-4": {
-			"Syntatis\\WPHelpers\\Tests\\": "tests/"
+			"Syntatis\\WPHelpers\\Tests\\": [
+				"tests/app/",
+				"tests/inc/",
+				"tests/phpunit/"
+			]
 		}
 	},
 	"require": {
-		"php": ">=7.4"
+		"php": ">=7.4",
+		"symfony/polyfill-php80": "^1.29",
+		"syntatis/utils": "^1.1"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
