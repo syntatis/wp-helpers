@@ -53,6 +53,8 @@ class Enqueue
 	 *
 	 * @param string $prefix The prefix to add to the handle.
 	 *                       It is recommended to use kebab case for the prefix e.g. 'my-plugin'.
+	 *
+	 * @phpstan-param non-empty-string $prefix
 	 */
 	public function setPrefix(string $prefix): void
 	{
@@ -67,6 +69,8 @@ class Enqueue
 	 *
 	 * @param string $domainName   The text domain to use for the translations.
 	 * @param string $languagePath The path to the language files.
+	 *
+	 * @phpstan-param non-empty-string $domainName
 	 */
 	public function setTranslations(string $domainName, string $languagePath): void
 	{
@@ -79,6 +83,9 @@ class Enqueue
 	 *
 	 * @param string                                                               $fileName The name of the script file, without the .js extension.
 	 * @param array{localized:bool,dependencies:array<string>,version:string|null} $options
+	 *
+	 * @phpstan-param non-empty-string $fileName
+	 * @phpstan-param array{localized:bool,dependencies:list<non-empty-string>,version:non-empty-string|null} $options
 	 */
 	public function addScript(string $fileName, array $options = []): Script
 	{
@@ -105,6 +112,9 @@ class Enqueue
 	 *
 	 * @param string                                                                            $fileName The name of the stylesheet file, without the .css extension.
 	 * @param array{localized:bool,dependencies:array<string>,version:string|null,media:string} $options
+	 *
+	 * @phpstan-param non-empty-string $fileName
+	 * @phpstan-param array{localized:bool,dependencies:list<non-empty-string>,version:non-empty-string|null,media:non-empty-string} $options
 	 */
 	public function addStyle(string $fileName, array $options = []): void
 	{
