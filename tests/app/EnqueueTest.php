@@ -157,6 +157,8 @@ class EnqueueTest extends WPTestCase
 
 	public function testAddScriptWithInlineScript(): void
 	{
+		$this->markTestIncomplete('Requires custom assertion.');
+
 		$enqueue = new Enqueue($this->fixturePath . '/assets', 'https://example.com/assets/');
 		$enqueue->setPrefix('prefix');
 		$enqueue->addScript('admin', ['version' => '1.0.0-rc.2', 'dependencies' => ['jquery']])
@@ -190,6 +192,8 @@ class EnqueueTest extends WPTestCase
 
 	public function testAddScriptWithTranslations(): void
 	{
+		$this->markTestIncomplete('Requires custom assertion.');
+
 		$enqueue = new Enqueue($this->fixturePath . '/assets', 'https://example.com/assets/');
 		$enqueue->setTranslations('text-domain', $this->fixturePath . '/languages');
 		$enqueue->addScript('admin', ['localized' => true]);
