@@ -32,12 +32,12 @@ class ScriptTest extends WPTestCase
 	public function testGetWithInlineScripts(): void
 	{
 		$inlineScript = new class implements InlineScript {
-			public function getPosition(): string
+			public function getInlineScriptPosition(): string
 			{
 				return 'before';
 			}
 
-			public function __toString(): string
+			public function getInlineScriptContent(): string
 			{
 				return 'console.log("Hello, World!");';
 			}
